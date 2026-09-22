@@ -1,0 +1,30 @@
+# Ortam Değişkenleri ve Gizli Anahtarlar (ASLA GİTHUB'A YÜKLENMEMELİ)
+.env
+*.env
+.env.*
+!.env.example
+
+# Python Sanal Ortamı
+.venv/
+venv/
+ENV/
+env/
+
+# Python Önbellek Dosyaları
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# IDE ve Editör Ayarları
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# İşletim Sistemi Geçici Dosyaları
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store

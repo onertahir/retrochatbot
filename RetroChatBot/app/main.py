@@ -34,6 +34,7 @@ class ChatMessage(BaseModel):
 
 class ChatRequest(BaseModel):
     history: list[ChatMessage]
+    year: int = 2000
 
 
 class ChatResponse(BaseModel):
@@ -44,7 +45,7 @@ class ChatResponse(BaseModel):
 def chat(req: ChatRequest) -> ChatResponse:
     history = [m.model_dump() for m in req.history]
     try:
-        reply = ask_retro_bot(history)
+        reply = ask_retro_bot(history, year=req.year)
     except RuntimeError as exc:
         # Örn: GEMINI_API_KEY tanımlı değilse burası tetiklenir.
         raise HTTPException(status_code=500, detail=str(exc)) from exc
